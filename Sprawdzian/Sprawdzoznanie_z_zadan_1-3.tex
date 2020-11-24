@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+% Kodowanie latain 2
+%\usepackage[latin2]{inputenc}
+\usepackage[T1]{fontenc}
+% Można też użyć UTF-8
+\usepackage[utf8]{inputenc}
+
+% Język
+\usepackage[polish]{babel}
+% \usepackage[english]{babel}
+
+% Rózne przydatne paczki:
+% - znaczki matematyczne
+\usepackage{amsmath, amsfonts}
+% - wcięcie na początku pierwszego akapitu
+\usepackage{indentfirst}
+% - komenda \url 
+\usepackage{hyperref}
+% - dołączanie obrazków
+\usepackage{graphics}
+% - szersza strona
+\usepackage[nofoot,hdivide={2cm,*,2cm},vdivide={2cm,*,2cm}]{geometry}
+\frenchspacing
+% - brak numerów stron
+\pagestyle{empty}
+
+% dane autora
+\author{Jakub Fila}
+\title{Raport z wykonania zadań 1-3}
+\date{\today}
+\begin{document}
+\maketitle
+\noindent
+{\bf Zadanie 1.} \\
+\noindent
+Nastąpił problem z połączeniem z serwerem. Kolejne zadania wykonałem lokalnie na swoim komputerze. \\ \\
+follow@DESKTOP-OT5CUTI:~/.ssh\$ ssh-copy-id mpyzik@pwi.ii.uni.wroc.pl \\
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/follow/.ssh/id\_rsa\_sprawdzian.pub" \\ 
+
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed \\
+
+
+/usr/bin/ssh-copy-id: ERROR: ssh: connect to host pwi.ii.uni.wroc.pl port 22: Resource temporarily unavailable \\
+{\bf Zadanie 2.} \\
+$\graphicspath{ {./zad1_cat,png} }$ \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user\$ cat > Jakub\_Fila.txt  \\
+\noindent
+Jakub Fila \\
+nr indeksu: 323060 \\
+data: 24.11.2020 \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user\$ seq 0 7 100 >> Jakub\_Fila.txt \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user\$ mkdir testy \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user\$ mv Jakub\_Fila.txt testy/ \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user\$ cd testy/ \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/testy\$ ls \\
+Jakub\_Fila.txt \\
+$\\[1in]$
+{\bf Zadanie 3.} \\
+\noindent
+Do sworzenia 5 plików użyłem komend: \\ \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ hexdump /dev/urandom | head >> dane1.txt\\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ hexdump /dev/urandom | head >> dane2.txt\\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ hexdump /dev/urandom | head >> dane3.txt\\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ hexdump /dev/urandom | head >> dane4.txt\\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ hexdump /dev/urandom | head >> dane5.txt\\ \\
+Do sklejenia plików: \\ \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ cat dane1.txt dane2.txt dane3.txt dane4.txt dane5.txt > daneall.txt \\ \\
+Nie doczytałem, że plik ma się nazywać contact, więc zmieniłem nazwę: \\ \\
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ mv daneall.txt contact.txt \\ \\
+Polecenie grep (akurat nie miałem żadnych linii które spełniałyby ten warunek): \\ \\ 
+follow@DESKTOP-OT5CUTI:/mnt/c/Users/user/dane\$ grep '$\hat{}$0.*([a-z, 0-9][a-z, 0-9])$\backslash$\{2$\backslash$\}\$' contact.txt > output.txt \\
+czytelniejniej wygląda screenshot ten komendy. \\
+{\bf Nie starczyło mi czasu wkleić reszty komend, ale wszystko jest na screenshotach w folderze screeny\_terminala} \\
+\end{document}
